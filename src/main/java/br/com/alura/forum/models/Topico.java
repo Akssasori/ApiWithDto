@@ -1,7 +1,6 @@
 package br.com.alura.forum.models;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,7 +14,6 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 public class Topico implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -43,4 +41,9 @@ public class Topico implements Serializable {
     private List<Resposta> respostas = new ArrayList<>();
 
 
+    public Topico(String titulo, String mensagem, Curso curso) {
+        this.titulo = titulo;
+        this.mensagem = mensagem;
+        this.curso = curso;
+    }
 }

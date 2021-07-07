@@ -1,4 +1,4 @@
-package br.com.alura.forum.dtos;
+package br.com.alura.forum.dtos.request;
 
 import br.com.alura.forum.models.Topico;
 import lombok.AllArgsConstructor;
@@ -14,14 +14,14 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class TopicoDto {
+public class TopicoDtoRequest {
 
     private Long id;
     private String titulo;
     private String mensagem;
     private LocalDateTime dataCriacao;
 
-    public TopicoDto(Topico topico) {
+    public TopicoDtoRequest(Topico topico) {
         this.id = topico.getId();
         this.titulo = topico.getTitulo();
         this.mensagem = topico.getMensagem();
@@ -29,7 +29,7 @@ public class TopicoDto {
     }
 
 
-    public static List<TopicoDto> converter(List<Topico> topicos) {
-        return topicos.stream().map(TopicoDto::new).collect(Collectors.toList());
+    public static List<TopicoDtoRequest> converter(List<Topico> topicos) {
+        return topicos.stream().map(TopicoDtoRequest::new).collect(Collectors.toList());
     }
 }
